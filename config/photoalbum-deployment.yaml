@@ -6,6 +6,9 @@ metadata:
   name: photoalbum-app
 spec:
   replicas: 3
+  selector:
+      matchLabels:
+        name: photoalbum-app
   template:
     metadata:
       labels:
