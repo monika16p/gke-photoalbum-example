@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: photoalbum-app
-        image: gcr.io/yash-innovation/photoalbum-app@[DIGEST]
+        image: gcr.io/yash-innovation/photoalbum-app:latest
         tty: true
         ports:
         - containerPort: 8080
@@ -30,7 +30,7 @@ spec:
       - name: cloudsql-proxy
         image: gcr.io/cloudsql-docker/gce-proxy:1.11
         command: ["/cloud_sql_proxy",
-                  "-instances=yash-innovation:us-central1:photoalbum-db15=tcp:3306"]
+                  "-instances=var.connection_name=tcp:3306"]
         securityContext:
           runAsUser: 2
           allowPrivilegeEscalation: false
