@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: thumbnail-worker
-        image: gcr.io/yash-innovation/thumbnail-worker:latest]
+        image: gcr.io/yash-innovation/thumbnail-worker:latest
         tty: true
         env:
         - name: PROJECT_ID
@@ -28,7 +28,7 @@ spec:
       - name: cloudsql-proxy
         image: gcr.io/cloudsql-docker/gce-proxy:1.11
         command: ["/cloud_sql_proxy",
-                  "-instances=yash-innovation:us-central1:photoalbum-db19=tcp:3306"]
+                  "-instances=yash-innovation:us-central1:photoalbum-db20=tcp:3306"]
         securityContext:
           runAsUser: 2
           allowPrivilegeEscalation: false
